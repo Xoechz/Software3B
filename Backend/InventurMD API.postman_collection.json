@@ -1,0 +1,868 @@
+{
+	"info": {
+		"_postman_id": "f607af7f-cb3e-4489-982d-358ba82a0b09",
+		"name": "InventurMD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Software GET All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/software",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"software"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Software GET specific",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/software/5fbb74bcb7dfcb3474ad7444",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"software",
+						"5fbb74bcb7dfcb3474ad7444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2OTE0NDA5M2E0MzFmMzBhNzkwNWEiLCJpYXQiOjE2MDU4MDA0NjcsImV4cCI6MTYwNTgwNDA2N30.4XsxszDZR9p6cQmRQJUP0WmIsqoWVkp2Puwg74NZsxs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"info@ebimt.pro\",\r\n    \"password\": \"Cisco123*Cisco123*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/user/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Software POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Word\",\r\n    \"type\": \"Office\",\r\n    \"details\": \"Microsoft Office Product 2013\",\r\n    \"hardware\": \"ATPC02856\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/software",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"software"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Software PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Word\",\r\n    \"type\": \"Excel\",\r\n    \"details\": \"Microsoft Office Product 2013\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/software/5fbb74bcb7dfcb3474ad7444",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"software",
+						"5fbb74bcb7dfcb3474ad7444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Software DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/software/5fbb74bcb7dfcb3474ad7444",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"software",
+						"5fbb74bcb7dfcb3474ad7444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device GET All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/device",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device GET specific",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/device/5fbb7fc23c9af53b8c1977d2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"device",
+						"5fbb7fc23c9af53b8c1977d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Ulli\",\r\n    \"type\": \"Switch\",\r\n    \"manufacturer\": \"Cisco\",\r\n    \"version\": \"1150\",\r\n    \"serialNumber\": \"AT9938383745\",\r\n    \"inventoryNumber\": \"123\",\r\n    \"location\": \"HLA\",\r\n    \"warranty\": \"2020-12-31T00:00:00.000Z\",\r\n    \"purchaseDate\": \"2005-04-06T00:00:00.000Z\",\r\n    \"firmware\": \"Ulli OS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/device",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Gerry\",\r\n    \"type\": \"Switch\",\r\n    \"manufacturer\": \"Cisco\",\r\n    \"version\": \"1150\",\r\n    \"serialNumber\": \"AT99381111\",\r\n    \"inventoryNumber\": \"1234\",\r\n    \"location\": \"HLA\",\r\n    \"warranty\": \"2020-12-31T00:00:00.000Z\",\r\n    \"purchaseDate\": \"2005-04-06T00:00:00.000Z\",\r\n    \"firmware\": \"Ulli OS 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/device/5fbb7fc23c9af53b8c1977d2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"device",
+						"5fbb7fc23c9af53b8c1977d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/device/5fbb7fc23c9af53b8c1977d2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"device",
+						"5fbb7fc23c9af53b8c1977d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User GET All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDY3MzU4ODksImV4cCI6MTYwNjczOTQ4OX0.-CtIrlWbUnUBOqYRlVoJe9pEUjm3gQ4XJ5wj1SjyhJw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User GET specific",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDY3MzU4ODksImV4cCI6MTYwNjczOTQ4OX0.-CtIrlWbUnUBOqYRlVoJe9pEUjm3gQ4XJ5wj1SjyhJw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/user/info@ebimt.pro",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"info@ebimt.pro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDY3MzU4ODksImV4cCI6MTYwNjczOTQ4OX0.-CtIrlWbUnUBOqYRlVoJe9pEUjm3gQ4XJ5wj1SjyhJw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ramon@salagean.ru\",\r\n    \"name\": \"Salagean\",\r\n    \"password\": \"Cisco123*Cisco123*\",\r\n    \"roles\": [\"readOnly\"],\r\n    \"banned\": \"false\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/user",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDY3MzU4ODksImV4cCI6MTYwNjczOTQ4OX0.-CtIrlWbUnUBOqYRlVoJe9pEUjm3gQ4XJ5wj1SjyhJw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ramon@salagean.ru\",\r\n    \"name\": \"Salagean\",\r\n    \"password\": \"Cisco123*Cisco123*\",\r\n    \"roles\": [\"readOnly\"],\r\n    \"banned\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/user/ramon@salagean.ru",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"ramon@salagean.ru"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDY3MzU4ODksImV4cCI6MTYwNjczOTQ4OX0.-CtIrlWbUnUBOqYRlVoJe9pEUjm3gQ4XJ5wj1SjyhJw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/user/ramon@salagean.ro",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"ramon@salagean.ro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI2NjAsImV4cCI6MTYwNzk1NjI2MH0.ZuV_O0J_WGuG7e9l0myyw5gflLFddXHle3DoTnG-9EE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/user/logout",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role GET All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/role/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"role",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role GET specific",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/role/readOnly",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"role",
+						"readOnly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"testRole\",\r\n    \"permissions\": [\"role.read\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/role/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"role",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"testRole\",\r\n    \"permissions\": [\"role.read\", \"role.create\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/role/testRole",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"role",
+						"testRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Role DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/role/testRole",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"role",
+						"testRole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerService GET All",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/serverService",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serverService"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerService GET specific",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/serverService/5fd76ba7afd9f6355079b1bb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serverService",
+						"5fd76ba7afd9f6355079b1bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerService POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Fileserver\",\r\n    \"productName\": \"Samba\",\r\n    \"version\": \"3.1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/serverService/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serverService",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerService PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"Fileserver\",\r\n    \"productName\": \"Samba\",\r\n    \"version\": \"3.4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5000/serverService/5fd773d1ba63142d10f33889",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serverService",
+						"5fd773d1ba63142d10f33889"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServerService DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI3YWFiY2NkZmI4MzBmNThhZGEzM2UiLCJpYXQiOjE2MDYxMjA0NjIsImV4cCI6MTYwNjEyNDA2Mn0.18HUmSZ0Q1QllFwW4wAlRY6GRQAityrhkERkyf9SJ9k",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/serverService/5fd76ba7afd9f6355079b1bb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serverService",
+						"5fd76ba7afd9f6355079b1bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Token Validity Check",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmRlMjFiNDhkYTA3NzBkNmM0NTg2NjQiLCJpYXQiOjE2MDgzOTMxODEsImV4cCI6MTYwODM5Njc4MX0.Z-dAiNXMXOMj8rY0SvVcbSPXFyp1pMYMHHpJfttxWEk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5000/user/tokenValid",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"tokenValid"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmQ3NjgxOTk0YTk5NTE0NDAwMDM0Y2QiLCJpYXQiOjE2MDc5NTI3MTUsImV4cCI6MTYwNzk1NjMxNX0.-c3vIeXzQt6lQCwO6bhire5TtrMLTs-5Q2rvj_rl0hY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

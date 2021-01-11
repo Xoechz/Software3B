@@ -1,0 +1,10 @@
+[Unit]
+Description = InventurMD API
+After = network.target
+
+[Service]
+ExecStart = /root/InventurMD/Backend/InventurMDAPI/startDebian10.sh
+Type = forking
+
+[Install]
+WantedBy = multi-user.target
