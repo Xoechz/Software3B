@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const httpClient = axios.create({
-    baseURL: "https://www.ebimt.pro:5001",
+    baseURL: "https://localhost:5000",
     headers: {
         "Content-Type": "application/json"
     }
