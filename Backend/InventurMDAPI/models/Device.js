@@ -21,9 +21,6 @@ const deviceSchema = mongoose.Schema({
     location: {
         type: String
     },
-    manufacturer: {
-        type: String
-    },
     warranty: {
         type: Date
     },
