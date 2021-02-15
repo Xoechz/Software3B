@@ -97,6 +97,7 @@
                     { headerName: 'Inventar Nummer', field: 'inventoryNumber', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
                     { headerName: 'Produktname', field: 'productName', sortable: true, filter: true },
+                    { headerName: 'Hersteller', field: 'manufacturer', sortable: true, filter: true },
                     { headerName: 'Firmware', field: 'firmware', sortable: true, filter: true },
                     { headerName: 'Standort', field: 'location', sortable: true, filter: true },
                     { headerName: 'Kaufdatum', field: 'purchaseDate', sortable: true, filter: true },

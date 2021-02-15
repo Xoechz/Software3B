@@ -12,6 +12,9 @@ const deviceSchema = mongoose.Schema({
     version: {
         type: String
     },
+        manufacturer: {
+            type: String
+        },
     serialNumber: {
         type: String
     },
