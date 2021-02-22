@@ -19,6 +19,26 @@ const routes = [
     component: Login
   },
   {
+    path: '/addItem',
+    name: 'AddItem',
+    component: AddItem
+  },
+  {
+    path: '/addServerService',
+    name: 'AddServerService',
+    component: AddServerService
+  },
+  {
+    path: '/addDevice',
+    name: 'AddDevice',
+    component: AddDevice
+  },
+  {
+    path: '/addSoftware',
+    name: 'AddSoftware',
+    component: AddSoftware
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: Contact
@@ -41,6 +61,10 @@ const router = new VueRouter({
   routes
 })
 import { authCheckToken } from '../api/auth.checkToken.js';
+import AddItem from "../views/AddItem";
+import AddServerService from "../views/AddServerService";
+import AddDevice from "../views/AddDevice";
+import AddSoftware from "../views/AddSoftware";
 
 router.beforeEach(async (to, from, next) => {
   const publicPages = ['/login'];

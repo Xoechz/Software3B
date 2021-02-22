@@ -124,10 +124,11 @@
                 ];
                this.getData('serverservice/getAllServerServices', 3);
             },
-            addItem() {
-                console.log("Add Item")
-                //You have to call the adding-page
-            },
+          addItem() {
+            //You have to call the adding-page
+            console.log("Add Item")
+            this.$router.push({ name: 'AddItem' });
+          },
             // Just to show something as an example
             onRowClicked() {
                 console.log(this.getSelectedRows());

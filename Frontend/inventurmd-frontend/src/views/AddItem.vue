@@ -7,10 +7,24 @@
       <label id="mail">E-Mail: {{email}}</label><br /><label id="role">Rolle: {{role}}</label>
 
       <p> Welches Item wollen Sie hinzufuegen?</p>
-      <div>
-        <button v-on:click="pushDeviceRoute" variant="primary"> Device </button>
-        <button v-on:click="pushServerServiceRoute" variant="primary"> ServerService </button>
-        <button v-on:click="pushSoftwareRoute" variant="primary"> Software </button>
+      <div id="SelectAddItem">
+        <table style="text-align: center">
+          <tr>
+            <td>
+              <button v-on:click="pushDeviceRoute" variant="primary"> Device </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button v-on:click="pushServerServiceRoute" variant="primary"> ServerService </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button v-on:click="pushSoftwareRoute" variant="primary"> Software </button>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
     <footer-bar />
@@ -114,5 +128,20 @@ export default {
 </script>
 
 <style scoped>
+#SelectAddItem{
+  margin: auto;
+}
+  td{
+    margin: 50px;
+    width: 30%;
+  }
 
+  tr{
+    margin-bottom: 100px;
+  }
+
+  table{
+    width: 100%;
+    height: 100%;
+  }
 </style>

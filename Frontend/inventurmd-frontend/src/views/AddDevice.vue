@@ -6,12 +6,107 @@
       <h1>HOME</h1>
 
       <label id="mail">E-Mail: {{email}}</label><br /><label id="role">Rolle: {{role}}</label>
-
-
-
+        <div id="AddDevice">
+          <p>Bitte geben Sie die Daten f&uuml;r ein neues Ger&auml;t ein</p>
+              <table>
+                <tr>
+                  <td>
+                    <label> Inventarnummer </label>
+                  </td>
+                  <td>
+                    <input v-model="inventarnummer" placeholder="Inventarnummer">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Art </label>
+                  </td>
+                  <td>
+                    <input v-model="art" placeholder="Art">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Produktname </label>
+                  </td>
+                  <td>
+                    <input v-model="produktname" placeholder="Produktname">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Hersteller </label>
+                  </td>
+                  <td>
+                    <input v-model="hersteller" placeholder="Herrsteller">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Firmware </label>
+                  </td>
+                  <td>
+                    <input v-model="firmware" placeholder="Firmware">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Standort </label>
+                  </td>
+                  <td>
+                    <input v-model="standort" placeholder="Standort">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Kaufdatum </label>
+                  </td>
+                  <td>
+                    <input v-model="kaufdatum" placeholder="Kaufdatum">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Garantie </label>
+                  </td>
+                  <td>
+                    <input v-model="garantie" placeholder="Garantie">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Seriennummer </label>
+                  </td>
+                  <td>
+                    <input v-model="seriennummer" placeholder="Seriennummer">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label> Version </label>
+                  </td>
+                  <td>
+                    <input v-model="version" placeholder="Version">
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <button v-on:click="saveDevice" variant="primary"> Save Device and return to Home </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Inventarnummer: {{inventarnummer}}
+                  </td>
+                  <td colspan="2">
+                    <button v-on:click="printData" variant="primary"> printData </button>
+                  </td>
+                </tr>
+              </table>
+           </div>
+            </div>
     </div>
-    <footer-bar />
-  </div>
+    <!-- <footer-bar /> -->
 
 </template>
 
@@ -24,11 +119,16 @@ export default {
   name: 'AddDevice',
   data() {
     return {
-      columnDefs: null,
-      rowData: null,
-      gridApi: null,
-      columnApi: null,
-      autoGroupColumnDef: null
+      version: '',
+      seriennummer: '',
+      standort: '',
+      garantie: '',
+      kaufdatum: '',
+      firmware: '',
+      hersteller: '',
+      produktname: '',
+      inventarnummer: '',
+      art: '',
     }
   },
   components: {
@@ -42,10 +142,19 @@ export default {
       this.columnApi = params.columnApi;
     },
 
-    addItem() {
+    saveDevice() {
       //You have to call the adding-page
-      console.log("Add Item")
-      this.$router.push({ name: 'AddItem' });
+      console.log("Added Device");
+      //save the data from the input
+
+
+
+      //after saving return to home screen
+      this.$router.push({ name: 'Home' });
+    },
+    printData(){
+      data.inventarnummer = "modified";
+
     },
     // Just to show something as an example
     onRowClicked() {
@@ -70,5 +179,21 @@ export default {
 </script>
 
 <style scoped>
+#AddDevice{
+  margin: auto;
+}
 
+td{
+  margin: 50px;
+  width: 30%;
+}
+
+tr{
+  margin-bottom: 100px;
+}
+
+table{
+  width: 100%;
+  height: 100%;
+}
 </style>
