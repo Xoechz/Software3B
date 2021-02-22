@@ -66,30 +66,26 @@
                 alert(`Selected nodes: ${selectedDataStringPresentation}`);
             },
             getData: async function (queryPath, picker) {
-                if (true) {
-                    this.$store.dispatch(queryPath).then(
-                        response => {
-                            if (picker == 1) {
-                                console.log(response.data.devices[0]);
-                                this.rowData = response.data.devices;
-                            }
-                            else if (picker == 2) {
-                                console.log(response.data.software[0]);
-                                this.rowData = response.data.software;
-                            }
-                            else if (picker == 3) {
-                                console.log(response.data.serverServices[0]);
-                                this.rowData = response.data.serverServices;
-                            }
-                            else {
-                                //Add query for email
-                            }
-                            
-                        },
-                        error => {
-                            console.log(error);
-                        });
-                }
+              this.$store.dispatch(queryPath).then(
+                  response => {
+                    if (picker === 1) {
+                      console.log(response.data.devices[0]);
+                      this.rowData = response.data.devices;
+                    } else if (picker === 2) {
+                      console.log("here");
+                      console.log(response.data.software[0]);
+                      this.rowData = response.data.software;
+                    } else if (picker === 3) {
+                      console.log(response.data.serverServices[0]);
+                      this.rowData = response.data.serverServices;
+                    } else {
+                      //Add query for email
+                    }
+
+                  },
+                  error => {
+                    console.log(error);
+                  });
             },
             showDevices() {
                 this.rowData = null;
@@ -105,29 +101,28 @@
                     { headerName: 'Seriennummer', field: 'serialNumber', sortable: true, filter: true },
                     { headerName: 'Version', field: 'version', sortable: true, filter: true }
                 ];
-                this.getData('device/getAllDevices', 1); 
+                this.getData('device/getAllDevices', 1);
             },
             showSoftware() {
                 console.log("ShowSoftware");
                 this.rowData = null;
                 this.columnDefs = [
-                    { headerName: 'Software', field: 'software', sortable: true, filter: true },
+                    { headerName: 'Details', field: 'details', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
-                    { headerName: 'Produktname', field: 'productName', sortable: true, filter: true },
-                    { headerName: 'Hersteller', field: 'manufacturer', sortable: true, filter: true }
+                    { headerName: 'Produktname', field: 'name', sortable: true, filter: true },
+                    { headerName: 'Hardware', field: 'hardware', sortable: true, filter: true }
                 ];
-                // this.getData('software/getAllSoftware', 2); --> not implemented yet
+                this.getData('software/getAllSoftware', 2);
             },
             showServerServices() {
                 console.log("ShowServerServices");
                 this.rowData = null;
                 this.columnDefs = [
-                    { headerName: 'Server Service', field: 'sService', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
                     { headerName: 'Produktname', field: 'productName', sortable: true, filter: true },
-                    { headerName: 'Hersteller', field: 'manufacturer', sortable: true, filter: true }
+                    { headerName: 'Version', field: 'version', sortable: true, filter: true }
                 ];
-               // this.getData('serverServices/getAllServerServices', 3); --> not implemented yet
+               this.getData('serverservice/getAllServerServices', 3);
             },
             addItem() {
                 console.log("Add Item")
