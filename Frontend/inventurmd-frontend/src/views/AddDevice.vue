@@ -111,6 +111,8 @@ export default {
   name: 'AddDevice',
   data() {
     return {
+      email: 'david@dreib.at',
+      role: 'administrator',
       version: '',
       seriennummer: '',
       standort: '',
@@ -129,10 +131,7 @@ export default {
     FooterBar
   },
   methods: {
-    onGridReady(params) {
-      this.gridApi = params.api;
-      this.columnApi = params.columnApi;
-    },
+
     ADDDEVICE: async function (queryPath, picker) {
       this.$store.dispatch("/device/addDevice", {
         productName: "Ulli",
@@ -172,23 +171,9 @@ export default {
       this.inventarnummer = "modified";
     },
     // Just to show something as an example
-    onRowClicked() {
-      console.log(this.getSelectedRows());
-    }
+
   },
-  beforeMount() {
-    this.email = JSON.parse(localStorage.getItem('user')).email;
-    this.role = "Administrator"; //Database query required
-    this.showDevices();
-    this.autoGroupColumnDef = {
-      headerName: 'Model',
-      field: 'model',
-      cellRenderer: 'agGroupCellRenderer',
-      cellRendererParams: {
-        checkbox: true
-      }
-    };
-  }
+
 }
 
 </script>

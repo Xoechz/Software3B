@@ -70,10 +70,6 @@ export default {
     FooterBar
   },
   methods: {
-    onGridReady(params) {
-      this.gridApi = params.api;
-      this.columnApi = params.columnApi;
-    },
     ADDSOFTWARE: async function (queryPath, picker) {
       this.$store.dispatch("/software/addSoftware", {
         name: this.produktname,
@@ -100,23 +96,9 @@ export default {
       this.$router.push({ name: 'Home' });
     },
     // Just to show something as an example
-    onRowClicked() {
-      console.log(this.getSelectedRows());
-    }
+
   },
-  beforeMount() {
-    this.email = JSON.parse(localStorage.getItem('user')).email;
-    this.role = "Administrator"; //Database query required
-    this.showDevices();
-    this.autoGroupColumnDef = {
-      headerName: 'Model',
-      field: 'model',
-      cellRenderer: 'agGroupCellRenderer',
-      cellRendererParams: {
-        checkbox: true
-      }
-    };
-  }
+
 }
 
 </script>
