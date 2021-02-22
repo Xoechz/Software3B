@@ -3,7 +3,7 @@
   <div id="AddDeviceDiv">
     <nav-bar />
     <div class="mainContent">
-      <h1>HOME</h1>
+      <h1>Ger&auml;t hinzuf&uuml;gen</h1>
 
       <label id="mail">E-Mail: {{email}}</label><br /><label id="role">Rolle: {{role}}</label>
         <div id="AddDevice">

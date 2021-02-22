@@ -1,5 +1,7 @@
 <template>
   <div id="AddDevice">
+    <nav-bar />
+    <h1>ServerService hinzuf&uuml;gen</h1>
     <p>Bitte geben Sie die Daten f&uuml;r einen neuen ServerService ein</p>
     <table>
       <tr>

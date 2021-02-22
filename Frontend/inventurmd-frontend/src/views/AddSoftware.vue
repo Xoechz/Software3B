@@ -1,6 +1,8 @@
 <template>
 
   <div id="AddDevice">
+    <nav-bar />
+    <h1>Software hinzuf&uuml;gen</h1>
     <p>Bitte geben Sie die Daten f&uuml;r eine neue Software ein</p>
     <table>
       <tr>
