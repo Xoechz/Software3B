@@ -66,6 +66,7 @@
                 var del = confirm(`Delete node: ${selectedDataStringPresentation}`);
                   if(del === true){
                     this.deleteItem("device/deleteDevice", selectedData.map(node => node._id));
+                    this.showDevices();
                     //this.deleteItem("software/deleteSoftware", selectedData.map(node => node._id));
                     //this.deleteItem("serverservice/deleteServerService", selectedData.map(node => node._id));
                     //only delete device works right now, the routes and requests are for the other 2 are defined but not used yet
