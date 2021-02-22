@@ -19,6 +19,36 @@ class SoftwareService{
                 console.log(err)
             });
     }
+    deleteSoftware(payload) {
+        console.log(authHeader());
+        return httpClient
+            .delete(END_POINT + "/" + payload.id, {
+                headers: authHeader()
+            }).then(response =>{
+                console.log(response)
+                return response;
+            }).catch(err => {
+                console.log((err))
+            });
+    }
+    addSoftware(payload){
+        console.log(authHeader());
+        return httpClient
+            .post(END_POINT, {
+                headers: authHeader(),
+                body:{
+                    "name": payload.name,
+                    "type": payload.type,
+                    "details": payload.details,
+                    "hardware": payload.hardware
+                }
+            }).then(response =>{
+                console.log(response)
+                return response;
+            }).catch(err => {
+                console.log((err))
+            });
+    }
 }
 export default new SoftwareService();
 

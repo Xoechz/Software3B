@@ -29,6 +29,19 @@ export const device = {
               }
           );
 
+      },
+      addDevice({ commit }, payload) {
+          return DeviceService.addDevice(payload).then(
+              response => {
+                  console.log(response);
+                  return Promise.resolve(response);
+              },
+              error => {
+                  console.log(error);
+                  return Promise.reject(error);
+              }
+          );
+
       }
   }
 };

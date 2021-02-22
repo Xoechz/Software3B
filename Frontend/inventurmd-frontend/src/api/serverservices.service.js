@@ -19,6 +19,35 @@ class ServerServicesService{
                 console.log(err)
             });
     }
+    deleteServerService(payload) {
+        console.log(authHeader());
+        return httpClient
+            .delete(END_POINT + "/" + payload.id, {
+                headers: authHeader()
+            }).then(response =>{
+                console.log(response)
+                return response;
+            }).catch(err => {
+                console.log((err))
+            });
+    }
+    addServerService(payload){
+        console.log(authHeader());
+        return httpClient
+            .post(END_POINT, {
+                headers: authHeader(),
+                body:{
+                    "productName": payload.productName,
+                    "type": payload.type,
+                    "version": payload.version
+                }
+            }).then(response =>{
+                console.log(response)
+                return response;
+            }).catch(err => {
+                console.log((err))
+            });
+    }
 }
 export default new ServerServicesService();
 
