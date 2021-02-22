@@ -62,8 +62,14 @@
             getSelectedRows() {
                 const selectedNodes = this.gridApi.getSelectedNodes();
                 const selectedData = selectedNodes.map(node => node.data);
-                const selectedDataStringPresentation = selectedData.map(node => node.type + ' ' + node.productName).join(', ');
-                alert(`Selected nodes: ${selectedDataStringPresentation}`);
+                const selectedDataStringPresentation = selectedData.map(node => node.type + ' ' + node.productName + ' ' + node._id).join(', ');
+                var del = confirm(`Delete node: ${selectedDataStringPresentation}`);
+                  if(del === true){
+                    this.deleteItem("device/deleteDevice", selectedData.map(node => node._id));
+                    //this.deleteItem("software/deleteSoftware", selectedData.map(node => node._id));
+                    //this.deleteItem("serverservice/deleteServerService", selectedData.map(node => node._id));
+                    //only delete device works right now, the routes and requests are for the other 2 are defined but not used yet
+                  }
             },
             getData: async function (queryPath, picker) {
               this.$store.dispatch(queryPath).then(
@@ -72,7 +78,6 @@
                       console.log(response.data.devices[0]);
                       this.rowData = response.data.devices;
                     } else if (picker === 2) {
-                      console.log("here");
                       console.log(response.data.software[0]);
                       this.rowData = response.data.software;
                     } else if (picker === 3) {
@@ -87,9 +92,22 @@
                     console.log(error);
                   });
             },
+          deleteItem: async function (queryPath, id) {
+              console.log(id);
+            this.$store.dispatch(queryPath, {id: id}).then(
+                response => {
+
+                    console.log(response);
+
+                },
+                error => {
+                  console.log(error);
+                });
+          },
             showDevices() {
                 this.rowData = null;
                 this.columnDefs = [
+                    { headerName: 'ID', field: '_id', sortable: true, filter: true },
                     { headerName: 'Inventar Nummer', field: 'inventoryNumber', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
                     { headerName: 'Produktname', field: 'productName', sortable: true, filter: true },
@@ -107,6 +125,7 @@
                 console.log("ShowSoftware");
                 this.rowData = null;
                 this.columnDefs = [
+                  { headerName: 'ID', field: '_id', sortable: true, filter: true },
                     { headerName: 'Details', field: 'details', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
                     { headerName: 'Produktname', field: 'name', sortable: true, filter: true },
@@ -118,6 +137,7 @@
                 console.log("ShowServerServices");
                 this.rowData = null;
                 this.columnDefs = [
+                  { headerName: 'ID', field: '_id', sortable: true, filter: true },
                     { headerName: 'Art', field: 'type', sortable: true, filter: true },
                     { headerName: 'Produktname', field: 'productName', sortable: true, filter: true },
                     { headerName: 'Version', field: 'version', sortable: true, filter: true }
@@ -132,7 +152,29 @@
             // Just to show something as an example
             onRowClicked() {
                 console.log(this.getSelectedRows());
-            }
+            },
+          getContextMenuItems(params) {
+              console.log("here");
+            var result = [
+              {
+                name: 'Alert ' + params.value,
+                action: function () {
+                  window.alert('Alerting about ' + params.value);
+                },
+                cssClasses: ['redFont', 'bold'],
+              },
+              {
+                name: 'Always Disabled',
+                disabled: true,
+                tooltip:
+                    'Very long tooltip, did I mention that I am very long, well I am! Long!  Very Long!',
+              }
+            ];
+            return result;
+          }
+
+
+
         },
         beforeMount() {
             this.email = JSON.parse(localStorage.getItem('user')).email;

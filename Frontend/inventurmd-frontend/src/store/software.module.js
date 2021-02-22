@@ -15,6 +15,32 @@ export const software = {
                     return Promise.reject(error);
                 }
             );
+        },
+        deleteSoftware({ commit }, payload) {
+            return SoftwareService.deleteSoftware(payload).then(
+                response => {
+                    console.log(response);
+                    return Promise.resolve(response);
+                },
+                error => {
+                    console.log(error);
+                    return Promise.reject(error);
+                }
+            );
+
+        },
+        addSoftware({ commit }, payload) {
+            return SoftwareService.addSoftware(payload).then(
+                response => {
+                    console.log(response);
+                    return Promise.resolve(response);
+                },
+                error => {
+                    console.log(error);
+                    return Promise.reject(error);
+                }
+            );
+
         }
     }
 };
