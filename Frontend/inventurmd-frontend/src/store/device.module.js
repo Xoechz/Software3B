@@ -15,6 +15,20 @@ export const device = {
             return Promise.reject(error);
         }
       );
-    }
+
+    },
+      deleteDevice({ commit }, payload) {
+          return DeviceService.deleteDevice(payload).then(
+              response => {
+                  console.log(response);
+                  return Promise.resolve(response);
+              },
+              error => {
+                  console.log(error);
+                  return Promise.reject(error);
+              }
+          );
+
+      }
   }
 };

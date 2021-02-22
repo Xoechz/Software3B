@@ -72,7 +72,6 @@
                       console.log(response.data.devices[0]);
                       this.rowData = response.data.devices;
                     } else if (picker === 2) {
-                      console.log("here");
                       console.log(response.data.software[0]);
                       this.rowData = response.data.software;
                     } else if (picker === 3) {
@@ -87,6 +86,17 @@
                     console.log(error);
                   });
             },
+          deleteItem: async function (queryPath, id) {
+            this.$store.dispatch(queryPath, {id: id}).then(
+                response => {
+
+                    console.log(response);
+
+                },
+                error => {
+                  console.log(error);
+                });
+          },
             showDevices() {
                 this.rowData = null;
                 this.columnDefs = [
@@ -131,7 +141,29 @@
             // Just to show something as an example
             onRowClicked() {
                 console.log(this.getSelectedRows());
-            }
+            },
+          getContextMenuItems(params) {
+              console.log("here");
+            var result = [
+              {
+                name: 'Alert ' + params.value,
+                action: function () {
+                  window.alert('Alerting about ' + params.value);
+                },
+                cssClasses: ['redFont', 'bold'],
+              },
+              {
+                name: 'Always Disabled',
+                disabled: true,
+                tooltip:
+                    'Very long tooltip, did I mention that I am very long, well I am! Long!  Very Long!',
+              }
+            ];
+            return result;
+          }
+
+
+
         },
         beforeMount() {
             this.email = JSON.parse(localStorage.getItem('user')).email;

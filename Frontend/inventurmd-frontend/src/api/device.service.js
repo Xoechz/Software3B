@@ -19,6 +19,18 @@ class DeviceService{
                 console.log(err)
             });
        }
+       deleteDevice(payload) {
+           console.log(authHeader());
+           return httpClient
+               .delete(END_POINT + "/" + payload.id, {
+                   headers: authHeader()
+               }).then(response =>{
+                   console.log(response)
+                   return response;
+               }).catch(err => {
+                   console.log((err))
+               });
+       }
 }
 export default new DeviceService();
 
