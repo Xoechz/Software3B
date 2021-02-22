@@ -62,7 +62,7 @@
                     <label> Kaufdatum </label>
                   </td>
                   <td>
-                    <input v-model="kaufdatum" placeholder="Kaufdatum">
+                    <input type="date" v-model="kaufdatum" placeholder="2021-02-22">
                   </td>
                 </tr>
                 <tr>
@@ -91,15 +91,7 @@
                 </tr>
                 <tr>
                   <td colspan="2">
-                    <button v-on:click="saveDevice" variant="primary"> Save Device and return to Home </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Inventarnummer: {{inventarnummer}}
-                  </td>
-                  <td colspan="2">
-                    <button v-on:click="printData" variant="primary"> printData </button>
+                    <button v-on:click="ADDDEVICE" variant="primary"> Save Device and return to Home </button>
                   </td>
                 </tr>
               </table>
@@ -141,20 +133,43 @@ export default {
       this.gridApi = params.api;
       this.columnApi = params.columnApi;
     },
+    ADDDEVICE: async function (queryPath, picker) {
+      this.$store.dispatch("/device/addDevice", {
+        productName: "Ulli",
+        type: "Switch",
+        manufacturer: "Cisco",
+        version: "1150",
+        serialNumber: "AT9938383745",
+        inventoryNumber: "123",
+        location: "HLA",
+        warranty: "2020-12-31T00:00:00.000Z",
+        purchaseDate: "2005-04-06T00:00:00.000Z",
+        firmware: "Ulli OS"
 
-    saveDevice() {
-      //You have to call the adding-page
-      console.log("Added Device");
-      //save the data from the input
-
-
-
-      //after saving return to home screen
-      this.$router.push({ name: 'Home' });
+/*
+        productName: this.produktname.toString(),
+        type: this.art.toString(),
+        manufacturer: this.hersteller.toString(),
+        version: this.version.toString(),
+        serialNumber: this.seriennummer.toString(),
+        inventoryNumber: this.inventarnummer.toString(),
+        location: this.standort.toString(),
+        warranty: this.garantie.toString(),
+        purchaseDate: this.kaufdatum.toString(),
+        firmware: this.firmware.toString() */
+      }).then(
+          response => {
+            this.$router.push({ name: 'Home' });
+           console.log(response);
+          },
+          error => {
+            console.log(error);
+            this.$router.push({ name: 'Home' });
+          });
     },
     printData(){
-      data.inventarnummer = "modified";
-
+      //only for test purposes;
+      this.inventarnummer = "modified";
     },
     // Just to show something as an example
     onRowClicked() {

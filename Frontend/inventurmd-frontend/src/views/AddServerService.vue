@@ -7,7 +7,7 @@
           <label> Art </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Art">
+          <input v-model="art" placeholder="Art">
         </td>
       </tr>
       <tr>
@@ -15,7 +15,7 @@
           <label> Produktname </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Produktname">
+          <input v-model="productname" placeholder="Produktname">
         </td>
       </tr>
       <tr>
@@ -23,13 +23,12 @@
           <label> Version </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Version">
+          <input v-model="version" placeholder="Version">
         </td>
       </tr>
-
       <tr>
         <td colspan="2">
-          <button v-on:click="saveServerService" variant="primary"> Save Device and return to Home </button>
+          <button v-on:click="ADDSERVERSERVICE" variant="primary"> Save Device and return to Home </button>
         </td>
       </tr>
     </table>
@@ -42,14 +41,12 @@ import NavBar from '../components/NavBar'
 import FooterBar from '../components/Footer'
 
 export default {
-  name: 'AddDevice',
+  name: 'AddServerService',
   data() {
     return {
-      columnDefs: null,
-      rowData: null,
-      gridApi: null,
-      columnApi: null,
-      autoGroupColumnDef: null
+      art: '',
+      version: '',
+      productname: '',
     }
   },
   components: {
@@ -62,7 +59,21 @@ export default {
       this.gridApi = params.api;
       this.columnApi = params.columnApi;
     },
-
+    ADDSERVERSERVICE: async function (queryPath, picker) {
+      this.$store.dispatch("serverservice/addServerService", {
+          type: "Fileserver",
+          productName: "Samba",
+          version: "3.1"
+      }).then(
+          response => {
+            this.$router.push({ name: 'Home' });
+            console.log(response);
+          },
+          error => {
+            console.log(error);
+            this.$router.push({ name: 'Home' });
+          });
+    },
     saveServerService() {
       //You have to call the adding-page
       console.log("Added Device");

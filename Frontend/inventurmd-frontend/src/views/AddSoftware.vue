@@ -8,7 +8,7 @@
           <label> Art </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Art">
+          <input v-model="art" placeholder="Art">
         </td>
       </tr>
       <tr>
@@ -16,7 +16,7 @@
           <label> Details </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Details">
+          <input v-model="details" placeholder="Details">
         </td>
       </tr>
       <tr>
@@ -24,7 +24,7 @@
           <label> Produktname </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Produktname">
+          <input v-model="produktname" placeholder="Produktname">
         </td>
       </tr>
       <tr>
@@ -32,13 +32,13 @@
           <label> Hardware </label>
         </td>
         <td>
-          <input v-model="message" placeholder="Hardware">
+          <input v-model="hardware" placeholder="Hardware">
         </td>
       </tr>
 
       <tr>
         <td colspan="2">
-          <button v-on:click="saveSoftware" variant="primary"> Save Device and return to Home </button>
+        <button v-on:click="ADDSOFTWARE" variant="primary"> Save Device and return to Home </button>
         </td>
       </tr>
     </table>
@@ -53,14 +53,13 @@ import NavBar from '../components/NavBar'
 import FooterBar from '../components/Footer'
 
 export default {
-  name: 'AddDevice',
+  name: 'AddSoftware',
   data() {
     return {
-      columnDefs: null,
-      rowData: null,
-      gridApi: null,
-      columnApi: null,
-      autoGroupColumnDef: null
+      hardware: '',
+      produktname: '',
+      details: '',
+      art: '',
     }
   },
   components: {
@@ -73,7 +72,22 @@ export default {
       this.gridApi = params.api;
       this.columnApi = params.columnApi;
     },
-
+    ADDSOFTWARE: async function (queryPath, picker) {
+      this.$store.dispatch("/software/addSoftware", {
+        name: this.produktname,
+        type: this.art,
+        details: this.details,
+        hardware: this.hardware
+      }).then(
+          response => {
+            this.$router.push({ name: 'Home' });
+            console.log(response);
+          },
+          error => {
+            console.log(error);
+            this.$router.push({ name: 'Home' });
+          });
+    },
     saveSoftware() {
       console.log("Added Device");
       //save the data from the input
